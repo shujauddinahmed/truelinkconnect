@@ -17,31 +17,24 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbzag4GDhKtdGiwcQ-1LQY5oBYHqX65G0I8AJzy0TPnGtM3jhBKgAPh8sIuCAZJZi4fGoQ/exec", // Replace with your Web App URL
-            type: "POST",
-            data: formData,
-            crossDomain: true,
-            success: function (response, textStatus, xhr) {
-                console.log("Raw Response:", response); // Debugging
-
-                // Handle both JSON and plain text responses
-                try {
-                    var jsonResponse = typeof response === "string" ? JSON.parse(response) : response;
-                    if (jsonResponse.status === "success") {
-                        alert("Form submitted successfully!");
-                        $("#contactForm")[0].reset();
-                    } else {
-                        alert("Error: " + jsonResponse.message);
-                    }
-                } catch (error) {
-                    alert("Form submitted, but response parsing failed.");
-                    console.log("Parsing Error:", error);
-                }
-            },
-            error: function (xhr, status, error) {
-                console.log("Error details:", xhr.responseText);
-                alert("There was an error. Check the console for details.");
-            }
-        });
+    url: "YOUR_GOOGLE_SCRIPT_URL", // Replace with your actual Web App URL
+    type: "POST",
+    data: formData,
+    crossDomain: true,
+    success: function (response) {
+        console.log("Raw Response:", response); // Debugging
+        
+        if (response.status === "success") {
+            alert("Form submitted successfully!");
+            $("#contactForm")[0].reset();
+        } else {
+            alert("Error: " + response.message);
+        }
+    },
+    error: function (xhr) {
+        console.log("Error details:", xhr.responseText);
+        alert("There was an error. Check the console for details.");
+    }
+});
     });
 });
