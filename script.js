@@ -2,31 +2,30 @@ $(document).ready(function () {
     $("#contactForm").submit(function (event) {
         event.preventDefault();
 
-        const formData = {
-            companyName: $("input[name='companyName']").val(),
-            contactPerson: $("input[name='contactPerson']").val(),
-            email: $("input[name='email']").val(),
-            phoneNumber: $("input[name='phoneNumber']").val(),
-            projectName: $("input[name='projectName']").val(),
-            projectDescription: $("textarea[name='projectDescription']").val(),
-            problemSolved: $("textarea[name='problemSolved']").val(),
-            targetAudience: $("textarea[name='targetAudience']").val(),
-            competitorApps: $("input[name='competitorApps']").val(),
-            expectedUserBase: $("input[name='expectedUserBase']").val(),
-            preferredLaunchDate: $("input[name='preferredLaunchDate']").val()
+        var formData = {
+            companyName: $("#companyName").val(),
+            contactPerson: $("#contactPerson").val(),
+            email: $("#email").val(),
+            phoneNumber: $("#phoneNumber").val(),
+            projectName: $("#projectName").val(),
+            projectDescription: $("#projectDescription").val(),
+            problemSolved: $("#problemSolved").val(),
+            targetAudience: $("#targetAudience").val(),
+            competitors: $("#competitors").val(),
+            expectedUserBase: $("#expectedUserBase").val(),
+            launchDate: $("#launchDate").val()
         };
 
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbwh3A1IrE8mLvsnvK6Gb6g0Ju1O1yLL-kvsIFQVK7kUkOYd2p3f6RrC1W9fpxY-fgkoVA/exec", // Replace with your
+            url: "https://script.google.com/macros/s/AKfycbwv2IQ92vwBYQPWO8mGt6ubx-Co_4FcgBL5PsDU89r_sRRF2a_dhzE9KuepVBYROMVpRg/exec", // Replace with your actual script URL
             type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(formData),
+            data: formData,
             success: function (response) {
-                $("#responseMessage").text("Form submitted successfully!");
+                alert("Form submitted successfully!");
                 $("#contactForm")[0].reset();
             },
             error: function () {
-                $("#responseMessage").text("There was an error. Try again.");
+                alert("There was an error. Try again.");
             }
         });
     });
