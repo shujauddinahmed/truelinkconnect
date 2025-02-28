@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueLink Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>TrueLink Connect</h1>
+        <p>Connecting Visions, Creating Futures</p>
+    </header>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label>Company Name (Required):</label>
+            <input type="text" name="companyName" required>
+
+            <label>Contact Person (Required):</label>
+            <input type="text" name="contactPerson" required>
+
+            <label>Email (Required):</label>
+            <input type="email" name="email" required>
+
+            <label>Phone Number (Required):</label>
+            <input type="tel" name="phoneNumber" required>
+
+            <label>Project Name (Required):</label>
+            <input type="text" name="projectName" required>
+
+            <label>Project Description (Required):</label>
+            <textarea name="projectDescription" required></textarea>
+
+            <label>What problem does this application solve?</label>
+            <textarea name="problemSolved"></textarea>
+
+            <label>Target Audience (Age, Location, Usage Patterns):</label>
+            <textarea name="targetAudience"></textarea>
+
+            <label>Competitor Apps/Websites (if any):</label>
+            <input type="text" name="competitorApps">
+
+            <label>Expected User Base (100s, 1000s, Millions?):</label>
+            <input type="text" name="expectedUserBase">
+
+            <label>Preferred Launch Date:</label>
+            <input type="date" name="preferredLaunchDate">
+
+            <button type="submit">Submit</button>
+        </form>
+        <p id="responseMessage"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
