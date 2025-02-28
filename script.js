@@ -17,7 +17,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-    url: "YOUR_GOOGLE_SCRIPT_URL", // Replace with your actual Web App URL
+    url: "https://script.google.com/macros/s/AKfycbzag4GDhKtdGiwcQ-1LQY5oBYHqX65G0I8AJzy0TPnGtM3jhBKgAPh8sIuCAZJZi4fGoQ/exec", // Replace with your actual Web App URL
     type: "POST",
     data: formData,
     crossDomain: true,
